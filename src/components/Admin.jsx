@@ -1,32 +1,32 @@
 import React from "react";
+import { Services, Footer } from "./";
+import logo from "../../images/logo.png";
 
 const Admin = ({ onLogout }) => {
   return (
-    <div className="min-h-screen gradient-bg-welcome">
-      <div className="flex justify-between items-center p-4">
-        <h1 className="text-white text-2xl">Admin Dashboard</h1>
-        <button 
-          onClick={onLogout}
-          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-        >
-          Logout
-        </button>
-      </div>
-      <div className="p-8">
-        <div className="bg-white rounded-lg p-6 shadow-lg">
-          <h2 className="text-xl mb-4">System Overview</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-blue-100 p-4 rounded">
-              <h3 className="font-bold">Active Users</h3>
-              <p className="text-2xl">42</p>
+    <div className="min-h-screen">
+      <div className="gradient-bg-welcome">
+        <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer">
+          <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
+            <div className="flex flex-[0.5] justify-center items-center">
+              <a href="https://nanifish.com" className="mx-2 cursor-pointer">
+                <img src={logo} alt="logo" className="w-32" />
+              </a>
             </div>
-            <div className="bg-green-100 p-4 rounded">
-              <h3 className="font-bold">Total Transactions</h3>
-              <p className="text-2xl">1,337</p>
+            <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
+              <span className="text-white text-xl font-bold">Admin Page</span>
+              <button 
+                onClick={onLogout}
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              >
+                Logout
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <Services />
+      <Footer />
     </div>
   );
 };
